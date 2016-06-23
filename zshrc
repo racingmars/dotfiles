@@ -7,7 +7,7 @@ setopt appendhistory histignoredups histsavenodups
 
 # Prompt
 setopt promptsubst
-PS1='${SSH_CONNECTION+"%n@%m:"}%~%# '
+PS1='${STY+"(s)"}${SSH_CONNECTION+"%n@%m:"}%~%# '
 
 # Misc
 export EDITOR=vim
