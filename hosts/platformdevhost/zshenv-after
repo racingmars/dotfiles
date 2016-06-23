@@ -1,0 +1,2 @@
+export PATH=$HOME/lib/spark/bin:$HOME/lib/hadoop/bin:$HOME/lib/sbt/bin:$PATH
+

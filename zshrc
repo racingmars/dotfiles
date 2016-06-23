@@ -9,10 +9,14 @@ setopt appendhistory histignoredups histsavenodups
 setopt promptsubst
 PS1='${SSH_CONNECTION+"%n@%m:"}%~%# '
 
+# Misc
+export EDITOR=vim
+export VISUAL=vim
+
 # Aliases
 alias ls='ls -F'
 alias vi='vim'
 
 # Local settings
-if [[ -s $HOME/.zshrc_local ]] ; then source $HOME/.zshrc_local ; fi
+if [[ -f $HOME/lib/dotfiles/hosts/`uname -n`/zshrc-after ]] ; then source $HOME/lib/dotfiles/hosts/`uname -n`/zshrc-after ; fi
 
