@@ -7,7 +7,7 @@ setopt appendhistory histignoredups histsavenodups
 
 # Prompt
 setopt promptsubst
-PS1='[%h] ${STY+"[s]"}${SSH_CONNECTION+"%n@%m:"}%~%# '
+PS1='[%h] ${SSH_CONNECTION+"%n@%m:"}%~%# '
 
 # Completion
 autoload -Uz compinit
@@ -22,5 +22,7 @@ alias ls='ls -F'
 alias vi='vim'
 
 # Local settings
-if [[ -f $HOME/lib/dotfiles/hosts/`uname -n`/zshrc-after ]] ; then source $HOME/lib/dotfiles/hosts/`uname -n`/zshrc-after ; fi
+if [[ -f $HOME/lib/dotfiles/hosts/`uname -n`/zshrc-after ]]; then
+  source $HOME/lib/dotfiles/hosts/`uname -n`/zshrc-after
+fi
 

@@ -8,41 +8,42 @@
 ## override file, don't add that custom location to PATH, we'll still
 ## take care of that here.
 
-# TODO: Load environment overrides here
+# If re-sourcing this environment file, we want to restore the original
+# login path first so we don't end up re-building with tons of duplicate
+# entries.
 
-# Java
-
-if [[ -e $HOME/lib/jdk && -z "$JAVA_HOME" ]]; then
-  export JAVA_HOME=$HOME/lib/jdk
+if [[ -z "$ORIG_PATH" ]]; then
+  export ORIG_PATH=$PATH
+else
+  export PATH=$ORIG_PATH
+  if [[ -x /usr/libexec/path_helper ]]; then
+    eval `/usr/libexec/path_helper -s`
+  fi
 fi
 
-if [[ -n "$JAVA_HOME" ]]; then
-  PATH=$JAVA_HOME/bin:$PATH
+### Load machine-specific environment
+if [[ -f "$HOME/lib/dotfiles/hosts/$(uname -n)/zshenv-before" ]]; then
+  source "$HOME/lib/dotfiles/hosts/$(uname -n)/zshenv-before"
 fi
+###
 
-# Go
+### Java
+[[ -e $HOME/lib/jdk && -z "$JAVA_HOME" ]] && export JAVA_HOME=$HOME/lib/jdk
+[[ -n "$JAVA_HOME" ]] && PATH=$JAVA_HOME/bin:$PATH
+###
 
-if [[ -e $HOME/lib/go && -z "$GOROOT" ]]; then
-  export GOROOT=$HOME/lib/go
-fi
-
-if [[ -n "$GOROOT" ]]; then
-  PATH=$GOROOT/bin:$PATH
-fi
-
-if [[ -d $HOME/src/go && -z "$GOPATH" ]]; then
-  export GOPATH=$HOME/src/go
-fi
-
-if [[ -n "$GOPATH" ]]; then
-  PATH=$GOPATH/bin:$PATH
-fi
-
-# Finish
+### Go
+[[ -e $HOME/lib/go && -z "$GOROOT" ]] && export GOROOT=$HOME/lib/go
+[[ -n "$GOROOT" ]] && PATH=$GOROOT/bin:$PATH
+[[ -d $HOME/src/go && -z "$GOPATH" ]] && export GOPATH=$HOME/src/go
+[[ -n "$GOPATH" ]]  && PATH=$GOPATH/bin:$PATH
+###
 
 export PATH
 
-if [[ -f "$HOME/lib/dotfiles/hosts/`uname -n`/zshenv-after" ]]; then
-  source "$HOME/lib/dotfiles/hosts/`uname -n`/zshenv-after"
+### Load machine-specific environment
+if [[ -f "$HOME/lib/dotfiles/hosts/$(uname -n)/zshenv-after" ]]; then
+  source "$HOME/lib/dotfiles/hosts/$(uname -n)/zshenv-after"
 fi
+###
 

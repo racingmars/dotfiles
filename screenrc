@@ -1,3 +1,10 @@
-startup_message off
+# Don't display the copyright page
+startup_message off			# default: on
+
+term xterm-256color
 termcapinfo xterm* ti@:te@
+
+hardstatus off
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{W} %m-%d %c %{g}]'
 
