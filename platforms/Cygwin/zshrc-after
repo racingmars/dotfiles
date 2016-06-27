@@ -1,0 +1,2 @@
+# No 'w'? We'll just use 'who'
+alias w=who

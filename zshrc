@@ -21,6 +21,11 @@ export VISUAL=vim
 alias ls='ls -F'
 alias vi='vim'
 
+# Platform settings
+if [[ -f $HOME/lib/dotfiles/platforms/$(uname -o)/zshrc-after ]]; then
+  source $HOME/lib/dotfiles/platforms/$(uname -o)/zshrc-after
+fi
+
 # Local settings
 if [[ -f $HOME/lib/dotfiles/hosts/`uname -n`/zshrc-after ]]; then
   source $HOME/lib/dotfiles/hosts/`uname -n`/zshrc-after

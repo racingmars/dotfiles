@@ -12,6 +12,14 @@
 # login path first so we don't end up re-building with tons of duplicate
 # entries.
 
+# In Cygwin, uname isn't on the path yet, so let's shoot for an explicit
+# full path.
+if [[ -x /usr/bin/uname ]]; then
+  uname=/usr/bin/uname
+else
+  uname=uname
+fi
+
 if [[ -z "$ORIG_PATH" ]]; then
   export ORIG_PATH=$PATH
 else
@@ -22,8 +30,8 @@ else
 fi
 
 ### Load machine-specific environment
-if [[ -f "$HOME/lib/dotfiles/hosts/$(uname -n)/zshenv-before" ]]; then
-  source "$HOME/lib/dotfiles/hosts/$(uname -n)/zshenv-before"
+if [[ -f "$HOME/lib/dotfiles/hosts/$($uname -n)/zshenv-before" ]]; then
+  source "$HOME/lib/dotfiles/hosts/$($uname -n)/zshenv-before"
 fi
 ###
 
@@ -42,8 +50,8 @@ fi
 export PATH
 
 ### Load machine-specific environment
-if [[ -f "$HOME/lib/dotfiles/hosts/$(uname -n)/zshenv-after" ]]; then
-  source "$HOME/lib/dotfiles/hosts/$(uname -n)/zshenv-after"
+if [[ -f "$HOME/lib/dotfiles/hosts/$($uname -n)/zshenv-after" ]]; then
+  source "$HOME/lib/dotfiles/hosts/$($uname -n)/zshenv-after"
 fi
 ###
 
