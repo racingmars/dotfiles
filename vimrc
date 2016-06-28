@@ -16,7 +16,9 @@ filetype plugin indent on
 
 syntax enable
 set background=dark
-colorscheme solarized
+if has('gui_running')
+    colorscheme solarized
+endif
 
 set modelines=0
 
