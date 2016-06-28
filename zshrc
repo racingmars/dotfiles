@@ -22,8 +22,8 @@ alias ls='ls -F'
 alias vi='vim'
 
 # Platform settings
-if [[ -f $HOME/lib/dotfiles/platforms/$(uname -o)/zshrc-after ]]; then
-  source $HOME/lib/dotfiles/platforms/$(uname -o)/zshrc-after
+if [[ -f $HOME/lib/dotfiles/platforms/$(uname -s)/zshrc-after ]]; then
+  source $HOME/lib/dotfiles/platforms/$(uname -s)/zshrc-after
 fi
 
 # Local settings
