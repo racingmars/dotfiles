@@ -19,6 +19,7 @@ export VISUAL=vim
 
 # Aliases
 alias ls='ls -F'
+alias ffeh='feh -F -D 5 -z'
 alias vi='vim'
 
 # Platform settings
