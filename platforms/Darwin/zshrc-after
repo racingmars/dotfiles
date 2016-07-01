@@ -1,0 +1,7 @@
+# VM VNC console
+# Uses RealVNC Viewer: https://www.realvnc.com/download/viewer/
+vmvnc() {
+    /Applications/VNC\ Viewer.app/Contents/MacOS/vncviewer \
+        ColorLevel=full WarnUnencrypted=0 vm.mattwilson.home:$1
+}
+
