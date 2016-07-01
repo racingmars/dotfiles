@@ -29,6 +29,12 @@ else
   fi
 fi
 
+### Load platform-specific environment
+if [[ -f "$HOME/lib/dotfiles/platforms/$($uname -s)/zshenv-before" ]]; then
+  source "$HOME/lib/dotfiles/platforms/$($uname -s)/zshenv-before"
+fi
+###
+
 ### Load machine-specific environment
 if [[ -f "$HOME/lib/dotfiles/hosts/$($uname -n)/zshenv-before" ]]; then
   source "$HOME/lib/dotfiles/hosts/$($uname -n)/zshenv-before"
@@ -38,6 +44,13 @@ fi
 ### Java
 [[ -e $HOME/lib/jdk && -z "$JAVA_HOME" ]] && export JAVA_HOME=$HOME/lib/jdk
 [[ -n "$JAVA_HOME" ]] && PATH=$JAVA_HOME/bin:$PATH
+
+[[ -e $HOME/lib/ant && -z "$ANT_HOME" ]] && export ANT_HOME=$HOME/lib/ant
+[[ -n "$ANT_HOME" ]] && PATH=$ANT_HOME/bin:$PATH
+
+[[ -e $HOME/lib/maven && -z "$MAVEN_HOME" ]] &&
+    export MAVEN_HOME=$HOME/lib/maven
+[[ -n "$MAVEN_HOME" ]] && PATH=$MAVEN_HOME/bin:$PATH
 ###
 
 ### Go
