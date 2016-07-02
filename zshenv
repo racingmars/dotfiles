@@ -41,6 +41,13 @@ if [[ -f "$HOME/lib/dotfiles/hosts/$($uname -n)/zshenv-before" ]]; then
 fi
 ###
 
+### Add sbin to path
+[[ -e /usr/local/sbin && ! "$PATH" =~ "/usr/local/sbin" ]] &&
+    PATH=$PATH:/usr/local/sbin
+[[ -e /usr/sbin && ! "$PATH" =~ "/usr/sbin" ]] &&
+    PATH=$PATH:/usr/sbin
+###
+
 ### Java
 [[ -e $HOME/lib/jdk && -z "$JAVA_HOME" ]] && export JAVA_HOME=$HOME/lib/jdk
 [[ -n "$JAVA_HOME" ]] && PATH=$JAVA_HOME/bin:$PATH
