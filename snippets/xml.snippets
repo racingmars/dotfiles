@@ -1,0 +1,23 @@
+snippet checklistfile
+	<?xml version="1.0" encoding="UTF-8"?>
+	<checklist xmlns="http://mattwilson.org/schema/checklist">
+		<aircraft>${1}</aircraft>
+		${0}
+	</checklist>
+
+snippet procedure
+	<procedure title="${1}">
+		${0}
+	</procedure>
+	
+snippet subprocedure
+	<subprocedure>
+		${1}
+	</subprocedure>
+
+snippet line
+	<line>
+		<item>${1}</item>
+		<action>${2}</action>
+	</line>
+

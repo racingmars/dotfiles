@@ -69,6 +69,12 @@ fi
 
 export PATH
 
+### Load platform-specific environment
+if [[ -f "$HOME/lib/dotfiles/platforms/$($uname -s)/zshenv-after" ]]; then
+  source "$HOME/lib/dotfiles/platforms/$($uname -s)/zshenv-after"
+fi
+###
+
 ### Load machine-specific environment
 if [[ -f "$HOME/lib/dotfiles/hosts/$($uname -n)/zshenv-after" ]]; then
   source "$HOME/lib/dotfiles/hosts/$($uname -n)/zshenv-after"

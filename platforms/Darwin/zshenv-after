@@ -1,0 +1,5 @@
+# If Postgres.app is installed, we want to use its tools
+if [[ -x "/Applications/Postgres.app/Contents/Versions/latest/bin/psql" ]]; then
+    export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
+fi
+
