@@ -67,6 +67,9 @@ fi
 [[ -n "$GOPATH" ]]  && PATH=$GOPATH/bin:$PATH
 ###
 
+# Don't allow pip to install packages outside of a virtualenv
+export PIP_REQUIRE_VIRTUALENV=true
+
 export PATH
 
 ### Load platform-specific environment
