@@ -1,0 +1,6 @@
+# This machine (mvshost) is usually running a 3270 emulator in a screen
+# session, which requires 24x80 to work. Since our screen setting include
+# a status line, we need to resize the terminal window to 25x80.
+
+printf '\e[8;25;80t'
+
