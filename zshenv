@@ -46,6 +46,8 @@ fi
     PATH=$PATH:/usr/local/sbin
 [[ -e /usr/sbin && ! "$PATH" =~ "/usr/sbin" ]] &&
     PATH=$PATH:/usr/sbin
+[[ -e /sbin && ! "$PATH" =~ ":/sbin" ]] &&
+    PATH=$PATH:/sbin
 ###
 
 ### Java
