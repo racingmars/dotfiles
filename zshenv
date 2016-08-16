@@ -64,6 +64,7 @@ fi
 
 ### Go
 [[ -e $HOME/lib/go && -z "$GOROOT" ]] && export GOROOT=$HOME/lib/go
+[[ -e /usr/local/go && -z "$GOROOT" ]] && export GOROOT=/usr/local/go
 [[ -n "$GOROOT" ]] && PATH=$GOROOT/bin:$PATH
 [[ -d $HOME/src/go && -z "$GOPATH" ]] && export GOPATH=$HOME/src/go
 [[ -n "$GOPATH" ]]  && PATH=$GOPATH/bin:$PATH
