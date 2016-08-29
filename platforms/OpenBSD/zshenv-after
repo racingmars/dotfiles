@@ -1,0 +1,2 @@
+# Set CVS mirror for system patches
+export CVSROOT=anoncvs@anoncvs1.usa.openbsd.org:/cvs
