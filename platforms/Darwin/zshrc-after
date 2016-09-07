@@ -1,10 +1,10 @@
 # Sort by CPU usage in top
 alias top='top -o cpu'
 
-# VM VNC console
+# VM VNC console -- DEPRECATED, no longer in use.
 # Uses RealVNC Viewer: https://www.realvnc.com/download/viewer/
-vmvnc() {
-    /Applications/VNC\ Viewer.app/Contents/MacOS/vncviewer \
-        ColorLevel=full WarnUnencrypted=0 vm.mattwilson.home:$1
-}
+#vmvnc() {
+#    /Applications/VNC\ Viewer.app/Contents/MacOS/vncviewer \
+#        ColorLevel=full WarnUnencrypted=0 vm.mattwilson.home:$1
+#}
 
