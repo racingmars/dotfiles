@@ -3,7 +3,7 @@
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-setopt appendhistory histignoredups histsavenodups
+setopt appendhistory histignoredups histsavenodups histignorespace
 
 # Prompt
 setopt promptsubst
