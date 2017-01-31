@@ -39,7 +39,10 @@ makelink snippets .vim/snippets
 
 # Set up Vim Vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall
+# Running this from the script doesn't seem to work consistently;
+# tell the user to do it
+echo "Run "vim +PluginInstall +qall" to install Vundle plugins."
+#vim +PluginInstall +qall
 
 mkdir .ssh
 chmod 700 .ssh
