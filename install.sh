@@ -2,13 +2,15 @@
 
 # meant to be installed on a new system, from the user's home directory,
 # with something like:
-# curl -s https://raw.githubusercontent.com/racingmars/dotfiles/master/install \
-#  | sh
+# curl -s https://raw.githubusercontent.com/racingmars/dotfiles/master/install.sh | sh
 #
 # This whole thing is a pretty poor way to do things but it is quick & dirty.
 
 BACKUP_DIR=${HOME}/dotfiles-backup
 mkdir $BACKUP_DIR
+
+# move cruft out of the way for the user to deal with later
+mv -f .profile .bashrc .bash_logout .bash_history "$BACKUP_DIR"
 
 if [ -e lib/dotfiles ]; then
 	echo "Dotfiles directory already exists. Exiting."
@@ -41,5 +43,4 @@ vim +PluginInstall +qall
 
 mkdir .ssh
 chmod 700 .ssh
-
 
