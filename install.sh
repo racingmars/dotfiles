@@ -26,7 +26,7 @@ makelink()
 	if [ -e "$DEST" ]; then
 		mv "$DEST" "$BACKUP_DIR"
 	fi
-	ln -s "lib/dotfile/$SOURCE" "$DEST"
+	ln -s "lib/dotfiles/$SOURCE" "$DEST"
 }
 
 makelink zshenv .zshenv
