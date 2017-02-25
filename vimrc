@@ -10,6 +10,7 @@ Plugin 'fatih/vim-go'
 Plugin 'majutsushi/tagbar'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
 
 " SnipMate
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -96,4 +97,9 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+" ----------------------------------------------
+" NERDTree
+map <F12> :NERDTreeToggle<CR>
+let NERDTreeQuitOnOpen = 1
 
