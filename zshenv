@@ -70,6 +70,11 @@ fi
 [[ -n "$GOPATH" ]]  && PATH=$GOPATH/bin:$PATH
 ###
 
+### .NET Core
+[[ -x $HOME/lib/dotnetcore/current/dotnet ]] && 
+    export PATH=$HOME/lib/dotnetcore/current:$PATH &&
+    export DOTNET_CLI_TELEMETRY_OPTOUT=1
+
 # Don't allow pip to install packages outside of a virtualenv
 export PIP_REQUIRE_VIRTUALENV=true
 
