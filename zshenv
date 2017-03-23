@@ -50,6 +50,10 @@ fi
     PATH=$PATH:/sbin
 ###
 
+### Local random bins
+[[ -e ${HOME}/lib/bin ]] &&
+    PATH=${HOME}/lib/bin:$PATH
+
 ### Java
 [[ -e $HOME/lib/jdk && -z "$JAVA_HOME" ]] && export JAVA_HOME=$HOME/lib/jdk
 [[ -n "$JAVA_HOME" ]] && PATH=$JAVA_HOME/bin:$PATH
