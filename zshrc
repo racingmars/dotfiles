@@ -12,6 +12,7 @@ PS1='[%h] ${SSH_CONNECTION+"%n@%m:"}%~%# '
 # Completion
 autoload -Uz compinit
 compinit
+setopt magic_equal_subst
 
 # Misc
 export EDITOR=vim
