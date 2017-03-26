@@ -14,6 +14,8 @@ autoload -Uz compinit
 compinit
 setopt magic_equal_subst
 
+which kubectl >/dev/null && source <(kubectl completion zsh)
+
 # Misc
 export EDITOR=vim
 export VISUAL=vim
