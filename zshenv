@@ -78,6 +78,11 @@ fi
 [[ -x $HOME/lib/dotnetcore/current/dotnet ]] && 
     export PATH=$HOME/lib/dotnetcore/current:$PATH &&
     export DOTNET_CLI_TELEMETRY_OPTOUT=1
+###
+
+### Node.js
+[[ -x $HOME/lib/nodejs ]] &&
+    export PATH=$HOME/lib/nodejs/bin:$PATH
 
 # Don't allow pip to install packages outside of a virtualenv
 export PIP_REQUIRE_VIRTUALENV=true
