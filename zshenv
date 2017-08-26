@@ -76,13 +76,16 @@ fi
 
 ### .NET Core
 [[ -x $HOME/lib/dotnetcore/current/dotnet ]] && 
-    export PATH=$HOME/lib/dotnetcore/current:$PATH &&
+    PATH=$HOME/lib/dotnetcore/current:$PATH &&
     export DOTNET_CLI_TELEMETRY_OPTOUT=1
 ###
 
 ### Node.js
 [[ -x $HOME/lib/nodejs ]] &&
-    export PATH=$HOME/lib/nodejs/bin:$PATH
+    PATH=$HOME/lib/nodejs/bin:$PATH
+export NPM_CONFIG_PREFIX=$HOME/lib/npm-global
+PATH=$NPM_CONFIG_PREFIX/bin:$PATH
+###
 
 # Don't allow pip to install packages outside of a virtualenv
 export PIP_REQUIRE_VIRTUALENV=true
