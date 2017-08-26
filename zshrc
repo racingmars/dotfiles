@@ -4,6 +4,7 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 setopt appendhistory histignoredups histsavenodups histignorespace
+bindkey '^R' history-incremental-search-backward
 
 # Prompt
 setopt promptsubst
@@ -24,6 +25,8 @@ export VISUAL=vim
 alias ls='ls -F'
 alias ffeh='feh -F -D 5 -z'
 alias vi='vim'
+
+alias lb='ledger -f ledger.dat --exchange \$ bal assets equity'
 
 # Platform settings
 if [[ -f $HOME/lib/dotfiles/platforms/$(uname -s)/zshrc-after ]]; then
