@@ -25,6 +25,7 @@ export VISUAL=vim
 alias ls='ls -F'
 alias ffeh='feh -F -D 5 -z'
 alias vi='vim'
+alias horizons='telnet horizons.jpl.nasa.gov 6775'
 
 alias lb='ledger -f ledger.dat --exchange \$ bal assets equity'
 
