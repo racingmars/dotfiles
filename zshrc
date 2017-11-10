@@ -26,8 +26,12 @@ alias ls='ls -F'
 alias ffeh='feh -F -D 5 -z'
 alias vi='vim'
 alias horizons='telnet horizons.jpl.nasa.gov 6775'
-
 alias lb='ledger -f ledger.dat --exchange \$ bal assets equity'
+
+# Functions
+function kubelog () {
+    kubectl -nplatform logs -f $(kubectl -nplatform get pods | grep ^${1}- | awk '{print $1}')
+}
 
 # Platform settings
 if [[ -f $HOME/lib/dotfiles/platforms/$(uname -s)/zshrc-after ]]; then

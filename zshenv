@@ -87,6 +87,11 @@ export NPM_CONFIG_PREFIX=$HOME/lib/npm-global
 PATH=$NPM_CONFIG_PREFIX/bin:$PATH
 ###
 
+### Kubernetes
+[[ -x $HOME/lib/kubernetes/client/bin ]] &&
+    PATH=$HOME/lib/kubernetes/client/bin:$PATH
+###
+
 # Don't allow pip to install packages outside of a virtualenv
 export PIP_REQUIRE_VIRTUALENV=true
 
