@@ -56,6 +56,8 @@ fi
 
 ### Java
 [[ -e $HOME/lib/jdk && -z "$JAVA_HOME" ]] && export JAVA_HOME=$HOME/lib/jdk
+[[ -e /usr/lib/jvm/default && -z "$JAVA_HOME" ]] \
+    && export JAVA_HOME=/usr/lib/jvm/default/bin
 [[ -n "$JAVA_HOME" ]] && PATH=$JAVA_HOME/bin:$PATH
 
 [[ -e $HOME/lib/ant && -z "$ANT_HOME" ]] && export ANT_HOME=$HOME/lib/ant
@@ -64,6 +66,7 @@ fi
 [[ -e $HOME/lib/maven && -z "$MAVEN_HOME" ]] &&
     export MAVEN_HOME=$HOME/lib/maven
 [[ -n "$MAVEN_HOME" ]] && PATH=$MAVEN_HOME/bin:$PATH
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true'
 ###
 
 ### Go
@@ -90,6 +93,18 @@ PATH=$NPM_CONFIG_PREFIX/bin:$PATH
 ### Kubernetes
 [[ -x $HOME/lib/kubernetes/client/bin ]] &&
     PATH=$HOME/lib/kubernetes/client/bin:$PATH
+###
+
+### Oracle tools
+[[ -x $HOME/lib/sqldeveloper/sqldeveloper/bin ]] &&
+    PATH=$HOME/lib/sqldeveloper/sqldeveloper/bin:$PATH
+[[ -x $HOME/lib/sqlcl/bin ]] &&
+    PATH=$HOME/lib/sqlcl/bin:$PATH
+###
+
+### gcloud SDK
+[[ -x $HOME/lib/google-cloud-sdk/bin ]] &&
+    PATH=$HOME/lib/google-cloud-sdk/bin:$PATH
 ###
 
 # Don't allow pip to install packages outside of a virtualenv
