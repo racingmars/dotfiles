@@ -15,7 +15,7 @@ autoload -Uz compinit
 compinit
 setopt magic_equal_subst
 
-which kubectl >/dev/null && source <(kubectl completion zsh)
+which kubectl &>/dev/null && source <(kubectl completion zsh)
 
 [[ -x $HOME/lib/google-cloud-sdk/bin ]] &&
     source $HOME/lib/google-cloud-sdk/completion.zsh.inc
