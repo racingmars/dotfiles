@@ -107,6 +107,11 @@ PATH=$NPM_CONFIG_PREFIX/bin:$PATH
     PATH=$HOME/lib/google-cloud-sdk/bin:$PATH
 ###
 
+### MacPorts
+[[ -x /opt/local ]] &&
+    PATH=/opt/local/bin:/opt/local/sbin:$PATH
+###
+
 # Don't allow pip to install packages outside of a virtualenv
 export PIP_REQUIRE_VIRTUALENV=true
 
