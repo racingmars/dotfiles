@@ -3,8 +3,12 @@ if [[ -x "/Applications/Postgres.app/Contents/Versions/latest/bin/psql" ]]; then
     export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
 fi
 
+if [[ -x "/opt/wine/bin/wine" ]]; then
+    export PATH=/opt/wine/bin:$PATH
+fi
+
 # Force a 32-bit WINE environment and fix fonts
-if [[ -x "/usr/local/bin/wine" ]]; then
+if [[ -x "/usr/local/bin/wine" || -x "/opt/wine/bin/wine" ]]; then
     export WINEARCH=win32
     export WINEPREFIX=${HOME}/.wine32
     export FREETYPE_PROPERTIES=truetype:interpreter-version=35
